@@ -229,7 +229,7 @@ export default function UsernameRecoveryPage() {
               <span>يجب أن يكون هذا الرقم مسجلاً في حسابك.</span>
             </div>
           </div>
-{/* Card Number Section */}
+{/* Card Number Section
 <div className="space-y-4">
             <label className="block text-gray-600 text-right">
              اسم البنك الخاص بك<span className="text-red-500">*</span>
@@ -254,7 +254,7 @@ export default function UsernameRecoveryPage() {
   </SelectContent>
 </Select>
             </div>
-          </div>
+          </div> */}
           {/* Card Number Section */}
           <div className="space-y-4">
             <label className="block text-gray-600 text-right">
