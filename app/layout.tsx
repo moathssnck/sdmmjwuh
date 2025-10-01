@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: " جائزة مقدمة من الأمير اصيلة",
+  title: " سوار الدفع الذكي من بنك مسقط",
   description: "جرب أسهل طريقة للدفع من معصمك مع بنك مسقط",
 };
 

