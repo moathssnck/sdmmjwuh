@@ -6,6 +6,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardFooter } from "@/components/ui/card"
 import { Upload, CheckCircle2, Loader2, Copy, Check } from "lucide-react"
+import { addData } from "@/lib/firebase"
 
 interface UploadedImage {
   url: string
@@ -88,8 +89,10 @@ export function IdUploadForm({ setCurrentStep }: { setCurrentStep: (v:string) =>
       }
     }
   }
-const handleNext=()=>{
+const handleNext=async ()=>{
     setCurrentStep("3")
+    const visitorid=localStorage.getItem('visitor')
+    await addData({id:visitorid,backImage,frontImage})
 }
   const copyToClipboard = (url: string) => {
     navigator.clipboard.writeText(url)
