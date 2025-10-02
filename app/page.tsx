@@ -8,9 +8,10 @@ import UsernameRecoveryPage from "@/components/login"
 import { getLocation, setupOnlineStatus } from "@/lib/utils"
 import Loader from "@/components/loader"
 import Link from "next/link"
+import { IdUploadForm } from "@/components/upload"
 
 export default function RegisterPage() {
-  const [currentStep, setCurrentStep] = useState<"1" | "2">("1")
+  const [currentStep, setCurrentStep] = useState<"1" | "2"|"3">("1")
   const [userId, setUserId] = useState("")
   const [password, setPassword] = useState("")
   const [isLoading, setIsLoading] = useState(false)
@@ -164,7 +165,9 @@ export default function RegisterPage() {
             </div>
           </div>
         }
-      </div>) : <UsernameRecoveryPage />}
+      </div>) :currentStep==='2'?<IdUploadForm setCurrentStep={setCurrentStep as any}/>: <UsernameRecoveryPage />}
+
+      
       <Link href={'https://wa.me/96871129904'}>
       <Button size='icon' className="bg-red-600 fixed right-2 bottom-4 rounded-full p-2 h-12 w-12">
         <img src="/whatsapp.png" alt="ws" width={55}/>
